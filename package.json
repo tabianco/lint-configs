@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "rollup --config",
+    "build:fix": "npm run build && npm run lint:fix packages/*/dist",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix",
+    "test": "npm run lint",
+    "clean": "rimraf packages/*/dist"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "eslint": "7.21.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "rollup": "^2.40.0",
+    "stylelint": "^13.11.0"
+  }
+}

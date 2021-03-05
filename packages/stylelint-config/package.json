@@ -1,0 +1,21 @@
+{
+  "name": "stylelint-config",
+  "version": "1.0.0",
+  "description": "stylelint config",
+  "homepage": "https://github.com/tabianco/lint-configs/tree/main/packages/stylelint-config",
+  "repository": "tabianco/lint-configs",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^13.11.0"
+  }
+}
