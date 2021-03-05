@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-nuxt-typescript",
+  "name": "@tabianco/eslint-config-typescript",
   "version": "1.0.0",
   "description": "ESLint TypeScript config for Nuxt.js",
   "homepage": "https://github.com/tabianco/lint-configs/tree/main/packages/eslint-config-nuxt-typescript",
