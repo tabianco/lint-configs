@@ -4,8 +4,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "rollup --config",
-    "build:fix": "npm run build && npm run lint:fix packages/*/dist",
+    "build": "rollup --config && npm run lint:fix packages/*/dist",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --fix",
     "test": "jest",
