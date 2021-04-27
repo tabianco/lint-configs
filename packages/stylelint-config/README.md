@@ -4,7 +4,7 @@
 [![npm (scoped with tag)](https://flat.badgen.net/npm/v/@tabianco/stylelint-config)](https://npmjs.com/package/@tabianco/stylelint-config)
 [![npm](https://flat.badgen.net/npm/dt/@tabianco/stylelint-config)](https://npmjs.com/package/@tabianco/stylelint-config)
 
-[ESlint](https://eslint.org/) config used for Nuxt.js.
+[stylelint](https://stylelint.io/) config with SCSS support.
 
 ## Usage
 
