@@ -1,6 +1,6 @@
 {
   "name": "@tabianco/stylelint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "stylelint config",
   "homepage": "https://github.com/tabianco/lint-configs/tree/main/packages/stylelint-config",
   "repository": "tabianco/lint-configs",
