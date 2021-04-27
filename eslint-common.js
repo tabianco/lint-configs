@@ -71,6 +71,8 @@ module.exports = {
 
     'vue/new-line-between-multi-line-property': 'error',
 
+    'vue/padding-line-between-blocks': 'error',
+
     'vue/sort-keys': [
       'error', 'asc', {
         ignoreChildrenOf: [],
