@@ -11,10 +11,10 @@
     "dist"
   ],
   "dependencies": {
-    "@nuxtjs/eslint-config-typescript": "5.0.0",
+    "@nuxtjs/eslint-config-typescript": "^6.0.0",
     "eslint-plugin-nuxt": "^2.0.0"
   },
   "peerDependencies": {
-    "eslint": "7.21.0"
+    "eslint": "^7.25.0"
   }
 }
