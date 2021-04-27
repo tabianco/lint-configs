@@ -3,79 +3,73 @@ const resolve = require('path').resolve
 const stylelint = require('stylelint')
 const config = require('../')
 
-const validCss = fs.readFileSync(resolve(__dirname, 'scss-valid.scss'), 'utf-8')
-const invalidCss = fs.readFileSync(resolve(__dirname, 'scss-invalid.scss'), 'utf-8')
+const load = fileName => fs.readFileSync(resolve(__dirname, fileName), 'utf-8')
+
+const validCss = load('scss-valid.scss')
+const invalidCss = load('scss-invalid.scss')
 
 describe('flags no warnings with valid css', () => {
+  /**
+   * @type {stylelint.LinterResult}
+   */
   let result
 
-  beforeEach(() => {
-    result = stylelint.lint({
+  beforeEach(async () => {
+    result = await stylelint.lint({
       code: validCss,
       config
     })
   })
 
   it('did not error', () => {
-    return result.then(data => expect(data.errored).toBeFalsy())
+    return expect(result.errored).toBeFalsy()
   })
 
   it('flags no warnings', () => {
-    return result.then(data =>
-      expect(data.results[0].warnings).toHaveLength(0)
-    )
+    return expect(result.results[0].warnings).toHaveLength(0)
   })
 })
 
 describe('flags warnings with invalid css', () => {
+  /**
+   * @type {stylelint.LinterResult}
+   */
   let result
 
-  beforeEach(() => {
-    result = stylelint.lint({
+  beforeEach(async () => {
+    result = await stylelint.lint({
       code: invalidCss,
       config
     })
   })
 
   it('did error', () => {
-    return result.then(data => expect(data.errored).toBeTruthy())
+    return expect(result.errored).toBeTruthy()
   })
 
   it('flags two warnings', () => {
-    return result.then(data =>
-      expect(data.results[0].warnings).toHaveLength(2)
-    )
+    return expect(result.results[0].warnings).toHaveLength(2)
   })
 
   it('correct warning text', () => {
-    return result.then(data =>
-      expect(data.results[0].warnings[0].text).toBe(
-        'Expected border to come before top (order/properties-alphabetical-order)'
-      )
+    return expect(result.results[0].warnings[0].text).toBe(
+      'Expected border to come before top (order/properties-alphabetical-order)'
     )
   })
 
   it('correct rule flagged', () => {
-    return result.then(data =>
-      expect(data.results[0].warnings[0].rule).toBe('order/properties-alphabetical-order')
-    )
+    return expect(result.results[0].warnings[0].rule).toBe('order/properties-alphabetical-order')
   })
 
   it('correct severity flagged', () => {
-    return result.then(data =>
-      expect(data.results[0].warnings[0].severity).toBe('error')
-    )
+    return expect(result.results[0].warnings[0].severity).toBe('error')
   })
 
   it('correct line number', () => {
-    return result.then(data =>
-      expect(data.results[0].warnings[0].line).toBe(3)
-    )
+    return expect(result.results[0].warnings[0].line).toBe(3)
   })
 
   it('correct column number', () => {
-    return result.then(data =>
-      expect(data.results[0].warnings[0].column).toBe(3)
-    )
+    return expect(result.results[0].warnings[0].column).toBe(3)
   })
 })
