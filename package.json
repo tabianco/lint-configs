@@ -7,7 +7,7 @@
     "build": "rollup --config && npm run lint:fix packages/*/dist",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --fix",
-    "test": "jest",
+    "test": "jest .test.js",
     "clean": "rimraf packages/*/dist"
   },
   "license": "MIT",
